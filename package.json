@@ -4,13 +4,14 @@
   "description": "Tennis refactoring kata, original code at https://github.com/emilybache/Tennis-Refactoring-Kata",
   "main": "TennisGame1.js",
   "scripts": {
+    "game": "npx babel-node RunTennisGame.js",
     "test": "jest",
     "test:watch": "jest --watch"
   },
   "author": "Emily Bache",
   "license": "MIT",
   "devDependencies": {
-    "babel-core": "^6.26.0",
+    "babel-cli": "^6.26.0",
     "babel-jest": "^22.4.3",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.1",
