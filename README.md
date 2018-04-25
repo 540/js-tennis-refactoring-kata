@@ -1,10 +1,35 @@
-# Tennis in JavaScript
+# Tennis Kata
 
-# Run tests with yarn
+Esta kata trata de modelar un partido de tenis :).
 
-In this repo you can use `yarn test` to run the tests.
+La forma de llevar el tanteo en tenis puede ser complicado, por este motivo la ATP nos ha contratado para construir un 
+marcador que sea capaz de mostrar el resultado actual de un partido.
 
-# Original author
+Nuestro trabajo consiste en escribir un programa "TennisGame" que contenga la lógica del sistema de tanteo y que muestre
+el resultado correcto en formato de texto para mostrarlo en las pantallas.
 
-This repo is just an ES6ified version of the great Emily Bache's repo
-located at https://github.com/emilybache/Tennis-Refactoring-Kata
+Cuando un jugador gane un punto, el programa contendrá un método al que se le podrá llamar para poder indicarle qué jugador
+ha sido el ganador del punto. Además, el sistema recibirá llamadas de las pantallas a un método "score()" que devolverá
+cuál es el resultado actual. Este método debería devolver un texto con el resultado.
+
+Este es un resumen explicamos cómo funciona el tanteo en tenis, pero si necesitas más información puedes visitar el siguiente  
+[enlace](https://en.wikipedia.org/wiki/Tennis#Scoring):
+
+1. Un juego se gana cuando uno de los jugadores gana al menos 4 puntos en total y al menos dos puntos más que el oponente.
+2. El tanteo parcial se lleva de una manera un tanto (¡BOOM!) "especial": respectivamente "Love", "Fifteen", "Thirty", y "Forty".
+3. Si al menos cada uno de los jugadores ha ganado 3 puntos y el resultado está empatado, el resultado es "Deuce".
+4. Si al menos cada uno de los jugadores ha ganado 3 puntos y uno de lo jugadores tiene un punto más que su rival, el 
+resultado del juego es "Advantage" para el jugador que va en cabeza.
+
+Sólo necesitas reportar el resultado del juego actual. Este es un primer desarrollo, por lo tanto, ahora los sets y 
+juegos quedan fuera del contexto. ¡Más vale!
+
+
+# Ejecutar los tests
+
+Ejecutar el comando `yarn test`.
+
+
+# Autor original
+
+Este repositorio es simplemente una versión adaptada del repositorio original de Emily Bache's ubicado en https://github.com/emilybache/Tennis-Refactoring-Kata
