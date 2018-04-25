@@ -1,4 +1,4 @@
-import { default as TennisGame } from './TennisGame2';
+import { default as TennisGame } from './TennisGame1';
 
 const allScores = [
   [0, 0, "Love-All"],

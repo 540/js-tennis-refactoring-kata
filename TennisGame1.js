@@ -1,6 +1,10 @@
 var TennisGame1 = function(player1Name = 'player1', player2Name = 'player2') {
     this.m_score1 = 0;
     this.m_score2 = 0;
+
+    this.P1res = "";
+    this.P2res = "";
+
     this.player1Name = player1Name;
     this.player2Name = player2Name;
 };
@@ -16,19 +20,22 @@ TennisGame1.prototype.getScore = function() {
     var score = "";
     var tempScore = 0;
     if (this.m_score1 === this.m_score2) {
-        switch (this.m_score1) {
+        if (this.m_score1 < 3) {
+          switch (this.m_score1) {
             case 0:
-                score = "Love-All";
-                break;
+              score = "Love";
+              break;
             case 1:
-                score = "Fifteen-All";
-                break;
+              score = "Fifteen";
+              break;
             case 2:
-                score = "Thirty-All";
-                break;
-            default:
-                score = "Deuce";
-                break;
+              score = "Thirty";
+              break;
+          }
+
+          score += "-All";
+        } else {
+          score = "Deuce";
         }
     } else if (this.m_score1 >= 4 || this.m_score2 >= 4) {
         var minusResult = this.m_score1 - this.m_score2;
@@ -60,6 +67,20 @@ TennisGame1.prototype.getScore = function() {
         }
     }
     return score;
+};
+
+TennisGame1.prototype.SetP1Score = function(number) {
+  var i;
+  for (i = 0; i < number; i++) {
+    this.wonPoint('player1');
+  }
+};
+
+TennisGame1.prototype.SetP2Score = function(number) {
+  var i;
+  for (i = 0; i < number; i++) {
+    this.wonPoint('player2');
+  }
 };
 
 export default TennisGame1;
