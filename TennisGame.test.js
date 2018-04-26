@@ -1,4 +1,5 @@
 import { default as TennisGame } from './TennisGame1';
+const each = require('jest-each');
 
 const allScores = [
   [0, 0, "Love-All"],
@@ -59,9 +60,7 @@ const checkScore = function(player1Score, player2Score) {
 };
 
 describe('tennis game', () => {
-  allScores.forEach((score) => {
-    it(score[2], () => {
-      expect(checkScore(score[0], score[1])).toEqual(score[2]);
-    });
+  each(allScores).it('%s:%s scores %s', (score1, score2, expected) => {
+    expect(checkScore(score1, score2)).toEqual(expected);
   });
 });
